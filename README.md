@@ -2,6 +2,8 @@
 <!--Heading-->
 ##### 매일 1~2문제씩 커밋 푸시합니다.
 > 한줄 코드라도 서로 거들면 낫다
+- 📆[11월 15일](https://github.com/Mcgeolypazun/Java-Algorithms/blob/main/src/november15th/Solution.java) 내배캠 알고리즘 풀이
+- 📆[11월 14일](https://github.com/Mcgeolypazun/Java-Algorithms/blob/main/src/november14th/Solution.java) 내배캠 알고리즘 풀이
 - 📆[11월 13일](https://github.com/Mcgeolypazun/Java-Algorithms/tree/main/src/november13th) 최대점수 구하기
 - 📆[11월 12일](https://github.com/Mcgeolypazun/Java-Algorithms/tree/main/src/november12th) 알고리즘 내배캠 10문제 및 바둑이 승차 문제
   
