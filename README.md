@@ -2,6 +2,10 @@
 <!--Heading-->
 ##### 매일 1~2문제씩 커밋 푸시합니다.
 > 한줄 코드라도 서로 거들면 낫다
+
+> Whenever I hear "It can not be done", I know I am close to success. -Michael Flatley
+
+- 📆[11월 16일](https://github.com/Mcgeolypazun/Java-Algorithms/tree/main/src/november16th) 내배캠 알고리즘 풀이 19,20번 문제 풀이
 - 📆[11월 15일](https://github.com/Mcgeolypazun/Java-Algorithms/blob/main/src/november15th/Solution.java) 내배캠 알고리즘 풀이
 - 📆[11월 14일](https://github.com/Mcgeolypazun/Java-Algorithms/blob/main/src/november14th/Solution.java) 내배캠 알고리즘 풀이
 - 📆[11월 13일](https://github.com/Mcgeolypazun/Java-Algorithms/tree/main/src/november13th) 최대점수 구하기
