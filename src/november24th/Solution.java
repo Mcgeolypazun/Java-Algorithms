@@ -1,8 +1,8 @@
 package november24th;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
+
+import static java.lang.Thread.sleep;
 
 public class Solution {
     public int[][] solution(int[][] arr1, int[][] arr2) {
@@ -21,7 +21,7 @@ public class Solution {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Solution T = new Solution();
             Scanner sc = new Scanner(System.in);
             int a = sc.nextInt();
@@ -35,28 +35,80 @@ public class Solution {
 //            }
 
            // System.out.println(a + b);
-       for(int x: T.solution(a,b)){
-           System.out.println(x+" ");
-       }
+
+//       for(int x: T.solution(a,b)){
+//           System.out.println(x+" ");
+//       }
+
+
+        for(int x : T.solution(a,b))
+            System.out.print(x+" ");
     }
 
 
     public int[] solution(int n, int m) {
         int[] answer = new int[2];
-        ArrayList<Integer> arr1 = new ArrayList<>();
-        ArrayList<Integer> arr2 = new ArrayList<>();
 
-        for(int i=0;i<n;i++){
-            if(n%i == 0){
-                arr1.add(i);
+        int[] nn = allResult(n);
+        int[] mm = allResult(m);
+
+        for(int i=0;i<nn.length;i++){
+            for(int j=0;j<mm.length;j++){
+                if(nn[i] == mm[j]){
+                    answer[0] = nn[i];
+                }
             }
         }
-        for(int j=0;j<m;j++){
-            if(n%j == 0){
-                arr2.add(j);
-            }
+        ArrayList<Integer> arrList1 = new ArrayList<>();
+        ArrayList<Integer> arrList2 = new ArrayList<>();
+
+        int count = 1;
+        for(int i=n;i<=n*m;i=n*count){
+            count++;
+            arrList1.add(i);
         }
+        count = 1;
+        for(int j=m;j<=n*m;j = m*count){
+            count++;
+            arrList2.add(j);
+        }
+
+        Optional<Integer> commonMin = arrList1.stream().filter(arrList2::contains).min(Integer::compare);
+
+        answer[1] = commonMin.orElse(0);
+
+
+
 
         return answer;
+    }
+
+    public static ArrayList<Integer> findDivisors(int number) {
+        int sqrt = (int) Math.sqrt(number);
+        ArrayList<Integer> arrList = new ArrayList<>();
+
+        for(int i=1;i<=sqrt;i++){
+            if(number % i == 0){
+                arrList.add(i);
+                if(number/i != i){
+                    arrList.add(number/i);
+                }
+            }
+        }
+        Collections.sort(arrList);
+
+        return arrList;
+    }
+    public static int[] changeListToArr(ArrayList<Integer> arrList){
+        int answer[] = new int[arrList.size()];
+        int size = arrList.size();
+        for(int i=0;i<size;i++){
+            answer[i] = arrList.get(i);
+        }
+        Arrays.sort(answer);
+        return answer;
+    }
+    public static int[] allResult(int a){
+        return changeListToArr(findDivisors(a));
     }
 }
