@@ -1,4 +1,4 @@
-package november22th;
+package november22nd;
 
 
 import java.util.Scanner;

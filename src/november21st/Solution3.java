@@ -1,8 +1,5 @@
-package november21th;
+package november21st;
 
-import November4th.Main;
-
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Solution3 {
