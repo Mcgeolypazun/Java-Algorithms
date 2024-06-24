@@ -20,11 +20,11 @@ class Edge implements Comparable<Edge>{
 }
 public class Main {
     static int n,m;
-    static ArrayList<ArrayList<Edge>> graph;
-    static int[] dis;
+    static ArrayList<ArrayList<Edge>> graph;//ArrayList의 인덱스는 해당 노드를 가리키고 중첩되어 있는 ArrayList의 Edge는 뻗어나가는 노드와 cost임
+    static int[] dis;//1에서 해당 노드까지 최단 경로를 저장해 놓은 배열임 (약 21억으로 초기화 후 최소값을 저장함
     public void solution(int v){
-        PriorityQueue<Edge> pQ = new PriorityQueue<>();
-        pQ.offer(new Edge(v,0));
+        PriorityQueue<Edge> pQ = new PriorityQueue<>();//삽입,삭제,검색 O(logn)의 시간이 걸림
+        pQ.offer(new Edge(v,0));//v부터 시작함 처음 cost는 0
         dis[v] = 0;
         while(!pQ.isEmpty()){
             Edge tmp = pQ.poll();
@@ -34,7 +34,7 @@ public class Main {
             for(Edge ob : graph.get(now)){
                 if(dis[ob.vex] > nowCost + ob.cost){
                     dis[ob.vex] = nowCost+ob.cost;
-                    pQ.offer(new Edge(ob.vex, nowCost+ob.cost));
+                    pQ.offer(new Edge(ob.vex, nowCost+ob.cost));//다음 노드 새롭게 갱신 후 다시 이어감
                 }
             }
         }
@@ -55,7 +55,7 @@ public class Main {
             int a = kb.nextInt();
             int b = kb.nextInt();
             int c = kb.nextInt();
-            graph.get(a).add(new Edge(b,c));
+            graph.get(a).add(new Edge(b,c));//a는 해당 노드 b는 이어진 노드 c는 값
         }
         T.solution(1);
         for(int i=2;i<=n;i++){
