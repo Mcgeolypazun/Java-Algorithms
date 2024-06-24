@@ -1,4 +1,4 @@
-package june.j24;
+package june.j24.main;
 
 import java.util.Scanner;
 
