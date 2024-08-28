@@ -28,6 +28,6 @@ class Solution {
 
     public static void main(String[] args) {
         Solution T = new Solution();
-        System.out.println(Arrays.toString(T.solution(new long[]{2, 7})));
+        System.out.println(Arrays.toString(T.solution(new long[]{2, 31})));
     }
 }
